@@ -2,5 +2,5 @@
   <a href = "{% url 'pizzas:index' %}">Homepage</a> - 
   <a href = "{% url 'pizzas:pizzas_menu' %}">Pizzas menu</a>
 </p>
-
+<h1>{% block header %}{% endblock header %}</h1>
 {% block content%}{% endblock content%}

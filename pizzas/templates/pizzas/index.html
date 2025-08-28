@@ -1,7 +1,12 @@
-<h1>Pizzeria</h1>
+{% extends 'pizzas/base.html' %}
 
-{% extends 'pizzas/base.html '%}
+{% block header %}
+  <h1>Pizzeria</h1>
+{% endblock header%}
 
 {% block content %}
-  <p>Welcome to our Pizzeria, take a look at the menu.</p>
+  <p>
+    Welcome to our Pizzeria, take a look at the 
+    <a href="{% url 'pizzas:pizzas_menu' %}">menu</a>.
+  </p>
 {% endblock content %}

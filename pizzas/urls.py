@@ -8,4 +8,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     # Page with Menu of pizzas
     path('pizzas/', views.pizzas, name = 'pizzas_menu' ),
+    # Page with single pizza ingredients
+    path('pizzas/<int:pizza_id>', views.pizza, name = 'pizza_toppings'),
 ]

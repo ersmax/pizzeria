@@ -11,3 +11,10 @@ def pizzas(request):
     pizzas = Pizza.objects.all()        # QuerySet of all pizzas
     context = {'pizzas_key': pizzas}
     return render(request, 'pizzas/pizzas.html', context)
+
+def pizza(request, pizza_id):
+    """The page with ingredients of a pizza"""
+    pizza = Pizza.objects.get(id=pizza_id)  # pizza_id is a reference to pizza.id
+    toppings = pizza.topping_set.all()   # reverse lookup to collect all ingredients object (Topping QuerySet)
+    context = {'pizza_key': pizza, 'toppings_key': toppings}
+    return render(request, 'pizzas/pizza.html', context)
